@@ -87,6 +87,7 @@ export default function Simulador() {
             <div className="flex flex-col space-y-4">
               {Object.keys(niveles).map((nivel) => (
                 <button
+                  style={{ fontSize: "25px" }}
                   key={nivel}
                   onClick={() => aumentarNivel(nivel)}
                   className="p-2 border border-white hover:bg-blue-500"
@@ -101,13 +102,21 @@ export default function Simulador() {
           <div className="col-span-4 mr-8">
             {nivelSeleccionado && (
               <>
-                <h3 className="text-xl font-bold">
-                  Preguntas para {nivelSeleccionado}:{" "}
-                  <span className="text-lg font-normal">
+                <h3
+                  style={{ fontSize: "25px", textAlign: "center" }}
+                  className="text-xl font-bold"
+                >
+                  Preguntas para {nivelSeleccionado}: <br></br>
+                  <span
+                    style={{ fontSize: "25px" }}
+                    className="text-lg font-normal"
+                  >
                     NIVEL ACTUAL {niveles[nivelSeleccionado]}
                   </span>
                 </h3>
-                <ul style={{ fontSize: "20px" }}>
+                <ul style={{ fontSize: "25px" }}>
+                  {" "}
+                  <br></br>
                   {categorias[nivelSeleccionado].map((pregunta) => (
                     <li key={pregunta.nivel} className="mb-2">
                       <div className="flex items-center">
