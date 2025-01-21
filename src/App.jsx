@@ -1,35 +1,53 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./VISTAS/Navbar";
+import Home from "./VISTAS/HOME/Home";
+import Niveles from "./VISTAS/NIVELES/Niveles";
+import Simulador from "./VISTAS/SIMULADOR/Simulador";
+// import Proyectos from "./Components/Proyectos";
+// import Docentes from "./Components/Docentes";
+// import Niveles from "./Components/KTH/Niveles";
+// import Formualrio2 from "./Components/Formualrio2";
+// import Simulador from "./Components/Simulador";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <Navbar />
+      <div
+        className="flex flex-col min-h-screen bg-gradient-to-b from-black to-gray-800" // Degradado de negro a gris
+      >
+        <div className="flex-grow p-4">
+          {/* This allows the content to grow and take up available space */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/niveles" element={<Niveles />} />
+            <Route path="/sim" element={<Simulador />} />
+            {/* <Route path="/datos" element={<Proyectos />} />
+            <Route path="/docentes" element={<Docentes />} />
+            <Route path="/niveles" element={<Niveles />} />
+            <Route path="/simulador" element={<Simulador />} />
+            <Route path="/formulario2" element={<Formualrio2 />} /> */}
+          </Routes>
+        </div>
+
+        {/* Footer */}
+        <footer className="bg-slateCustom p-4 text-white w-full flex justify-center items-center mt-auto">
+          <div className="flex space-x-4">
+            <p>&copy; 2025 Mi App. Todos los derechos reservados.</p>
+            <span>|</span>
+            <a href="/privacy" className="text-white hover:text-gray-300">
+              Política de privacidad
+            </a>
+            <span>|</span>
+            <a href="/terms" className="text-white hover:text-gray-300">
+              Términos y condiciones
+            </a>
+          </div>
+        </footer>
       </div>
-      <h1>Vite + React BASTIAN</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </Router>
   );
-}
+};
 
 export default App;

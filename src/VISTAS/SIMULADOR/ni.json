@@ -1,0 +1,231 @@
+{
+  "TRL": [
+    {
+      "nivel": 1,
+      "descripcion": "Resultados de investigación interesantes o idea de tecnología inicial identificada"
+    },
+    {
+      "nivel": 2,
+      "descripcion": "Concepto de tecnología y/o formulario de solicitud"
+    },
+    {
+      "nivel": 3,
+      "descripcion": "Prueba de concepto de funciones críticas y/o características en laboratorio"
+    },
+    {
+      "nivel": 4,
+      "descripcion": "Validación de tecnología en laboratorio"
+    },
+    {
+      "nivel": 5,
+      "descripcion": "Validación de tecnología en un entorno relevante"
+    },
+    {
+      "nivel": 6,
+      "descripcion": "Demostración de prototipo de tecnología en un entorno relevante"
+    },
+    {
+      "nivel": 7,
+      "descripcion": "Demostración de prototipo de tecnología en entorno operativo"
+    },
+    {
+      "nivel": 8,
+      "descripcion": "Tecnología completa y demostrada en operaciones reales"
+    },
+    {
+      "nivel": 9,
+      "descripcion": "Tecnología completa y probada en operaciones reales a lo largo del tiempo"
+    }
+  ],
+
+  "CRL": [
+    {
+      "nivel": 1,
+      "descripcion": "Hipótesis de posibles necesidad de mercado"
+    },
+    {
+      "nivel": 2,
+      "descripcion": "Necesidades específicas identificadas en el mercado"
+    },
+    {
+      "nivel": 3,
+      "descripcion": "Se establece la primera retroalimentación del mercado"
+    },
+    {
+      "nivel": 4,
+      "descripcion": "Problema/necesidades confirmadas de varios clientes o usuarios"
+    },
+    {
+      "nivel": 5,
+      "descripcion": "Establecimiento de intereses y relaciones con los clientes"
+    },
+    {
+      "nivel": 6,
+      "descripcion": "Beneficios confirmados por las primeras pruebas del cliente"
+    },
+    {
+      "nivel": 7,
+      "descripcion": "Clientes en pruebas extendidas o primeras ventas de prueba. Pequeño número de usuarios activos."
+    },
+    {
+      "nivel": 8,
+      "descripcion": "Primeras ventas comerciales y proceso de ventas implementado. Número sustancial de usuarios activos."
+    },
+    {
+      "nivel": 9,
+      "descripcion": "Ventas generalizadas a esa escala. Gran número de usuarios activos con un crecimiento sustancial."
+    }
+  ],
+  "BRL": [
+    {
+      "nivel": 1,
+      "descripcion": "Hipótesis nula o poco clara de la posible idea de negocio potencial de mercado y competencia."
+    },
+    {
+      "nivel": 2,
+      "descripcion": "Primera hipótesis del posible concepto de negocio (en cualquier formato) e identificación del potencial general del mercado y la competencia."
+    },
+    {
+      "nivel": 3,
+      "descripcion": "Descripción del modelo de negocio sostenible y mercado(s) objetivo incluida la competencia."
+    },
+    {
+      "nivel": 4,
+      "descripcion": "Primeros cálculos que indican un modelo de negocio económicamente viable. Primera evaluación que indica sostenibilidad ambiental y social."
+    },
+    {
+      "nivel": 5,
+      "descripcion": "Supuestos clave en el modelo de negocio sostenible probado en el mercado."
+    },
+    {
+      "nivel": 6,
+      "descripcion": "Modelo de negocio sostenible completo probado en clientes, socios, proveedores (por ejemplo, mediante ventas de prueba). Los cálculos muestran viabilidad económica."
+    },
+    {
+      "nivel": 7,
+      "descripcion": "Viabilidad del modelo de negocio sostenible (precios, modelo de ingresos, etc.) validado por las ventas comerciales iniciales."
+    },
+    {
+      "nivel": 8,
+      "descripcion": "Las ventas y las métricas muestran que el modelo de negocio sostenible es viable."
+    },
+    {
+      "nivel": 9,
+      "descripcion": "Modelo de negocio sostenible que ha demostrado cumplir con las expectativas internas y externas sobre beneficios, escalabilidad e impacto a lo largo del tiempo."
+    }
+  ],
+  "IPRL": [
+    {
+      "nivel": 1,
+      "descripcion": "Hipotetizar sobre sus posibles derechos de propiedad intelectual."
+    },
+    {
+      "nivel": 2,
+      "descripcion": "Identificó diferentes formas de posibles DPI que tiene/crea. Se aclara la propiedad y puede utilizar los DPI pertinentes."
+    },
+    {
+      "nivel": 3,
+      "descripcion": "Descripción de la posible clave de IPR con cierto detalle. Evaluación inicial del potencial para proteger los DPI clave."
+    },
+    {
+      "nivel": 4,
+      "descripcion": "Confirmó que la protección de los DPI es posible y para qué. Decidió por qué proteger ciertos DPI (relevancia comercial)."
+    },
+    {
+      "nivel": 5,
+      "descripcion": "El borrador de la estrategia de IPR para crear valor comercial está en su lugar. Presentación de la primera solicitud/registro formal de derechos de propiedad intelectual clave."
+    },
+    {
+      "nivel": 6,
+      "descripcion": "Primera estrategia completa de DPI implementada considerando diferentes DPI. Respuesta positiva en solicitudes/registros presentados."
+    },
+    {
+      "nivel": 7,
+      "descripcion": "Solicitudes/registros formales presentados de DPI clave en países/regiones relevantes de acuerdo con la estrategia de DPI."
+    },
+    {
+      "nivel": 8,
+      "descripcion": "Estrategia de DPI y prácticas de gestión totalmente implementadas. Solicitudes/registros formales presentados de DPI complementarios."
+    },
+    {
+      "nivel": 9,
+      "descripcion": "Fuerte apoyo y protección de los DPI para las empresas. Protección de los DPI concedida y mantenida en los países pertinentes."
+    }
+  ],
+  "FRL": [
+    {
+      "nivel": 1,
+      "descripcion": "No hay una descripción clara de las actividades de verificación inicial. No hay una visión clara de las necesidades iniciales de financiación y las opciones de financiación."
+    },
+    {
+      "nivel": 2,
+      "descripcion": "Descripción de las actividades de verificación inicial. Necesidad de financiación definida y fuentes de financiación para los hitos iniciales."
+    },
+    {
+      "nivel": 3,
+      "descripcion": "Financiamiento para el plan de verificación inicial asegurado."
+    },
+    {
+      "nivel": 4,
+      "descripcion": "Financiamiento para el plan de verificación elaborado asegurado."
+    },
+    {
+      "nivel": 5,
+      "descripcion": "Primer lanzamiento de financiación probado en una audiencia relevante. Definición de la necesidad de financiación a corto plazo y decisión sobre la estrategia de financiación."
+    },
+    {
+      "nivel": 6,
+      "descripcion": "Presentación mejorada para la financiación probada en una audiencia relevante. Contactos iniciados con fuentes de financiación externas relevantes."
+    },
+    {
+      "nivel": 7,
+      "descripcion": "Conversaciones iniciales con posibles fuentes de financiación externas. Presentación completa para financiación y material de apoyo listo."
+    },
+    {
+      "nivel": 8,
+      "descripcion": "Discusiones a nivel de hoja de términos con una o varias fuentes de financiación externas que muestren un claro interés."
+    },
+    {
+      "nivel": 9,
+      "descripcion": "Financiación asegurada para al menos 6-12 meses de operaciones. Sistema de pronóstico y monitoreo financiero completamente implementado."
+    }
+  ],
+  "TEAM": [
+    {
+      "nivel": 1,
+      "descripcion": "Falta de competencias/recursos necesarios para verificar la idea. Poca percepción de las necesidades del equipo (típicamente un individuo)."
+    },
+    {
+      "nivel": 2,
+      "descripcion": "Competencias limitadas en el lugar para comenzar a verificar la idea. Primera idea de competencias o recursos adicionales necesarios."
+    },
+    {
+      "nivel": 3,
+      "descripcion": "Algunas de las competencias necesarias para verificar/desarrollar la idea. Competencias necesarias definidas (y plan para encontrarlas)."
+    },
+    {
+      "nivel": 4,
+      "descripcion": "Un campeón está presente con una idea clara de la dirección (inicio/otro camino). Varias competencias necesarias en su lugar plan iniciado para complementar."
+    },
+    {
+      "nivel": 5,
+      "descripcion": "Equipo fundador inicial con las principales competencias y capacidades necesarias. El equipo acuerda la propiedad, los roles, los objetivos y las visiones."
+    },
+    {
+      "nivel": 6,
+      "descripcion": "Equipo fundador complementario diverso y comprometido con todas las competencias y capacidades necesarias para comenzar a construir un negocio."
+    },
+    {
+      "nivel": 7,
+      "descripcion": "Equipo y cultura que funcionan bien. Plan de crecimiento para expandir el equipo y desarrollar la organización a lo largo del tiempo."
+    },
+    {
+      "nivel": 8,
+      "descripcion": "Organización profesional establecida (junta, director ejecutivo, gerencia, personal)."
+    },
+    {
+      "nivel": 9,
+      "descripcion": "Organización bien estructurada y de alto rendimiento en todos los niveles que se mantiene, se desarrolla y funciona a lo largo del tiempo."
+    }
+  ]
+}

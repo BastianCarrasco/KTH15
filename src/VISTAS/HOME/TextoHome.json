@@ -1,0 +1,15 @@
+{
+  "welcomeMessage": "Bienvenido al KTH Innovation Readiness Level Dashboard",
+  "description": "Esta herramienta te ayudará a evaluar el estado de desarrollo de proyectos de innovación y nuevas empresas, y a planificar los próximos pasos adecuados para tu proyecto.",
+  "purposeTitle": "Propósito",
+  "purposeDescription": "El KTH Innovation Readiness Level Dashboard facilita el uso del modelo KTH Innovation Readiness Level para evaluar el estado de desarrollo y planificar los próximos pasos en proyectos de innovación y nuevas empresas.",
+  "useCasesTitle": "Casos de uso típicos",
+  "useCase1": "Evaluar el estado de desarrollo de un proyecto y hacer seguimiento del progreso a lo largo del tiempo.",
+  "useCase2": "Comparar y hacer seguimiento del estado de desarrollo de una cartera de proyectos.",
+  "howToTitle": "Cómo utilizar la herramienta",
+  "howToDescription": "Existen diferentes maneras de utilizar esta herramienta, algunas de las cuales son:",
+  "step1": "Para seguir un proyecto individual más detalladamente, use la pestaña 'Proyecto individual'. Ahí podrá revisar todos los criterios y marcar los alcanzados, para evaluar el Nivel de Madurez de Innovación.",
+  "step2": "Para hacer seguimiento de una cartera de proyectos, use la pestaña 'Carpeta de proyectos', donde podrá ingresar las evaluaciones del Nivel de Madurez de Innovación actual para cada proyecto.",
+  "step3": "Cualquier combinación de ambos enfoques anteriores.",
+  "formButtonText": "Ir al formulario"
+}
