@@ -58,24 +58,22 @@ export default function Simulador() {
 
     // Calcular totales y niveles
     const totalPreguntasPorCategoria = 9; // Cada categoría tiene 9 preguntas
-    let respuestasRespondidasTotales = 0;
+    let sumaNivelesTotales = 0;
 
     const nivelesPorCategoria = Object.keys(categorias).map((categoria) => {
       const respuestasSeleccionadas = Object.values(
         checkboxes[categoria] || {}
       ).filter((val) => val).length;
-      respuestasRespondidasTotales += respuestasSeleccionadas;
+      const nivel = Math.floor(respuestasSeleccionadas); // Nivel entero
+      sumaNivelesTotales += nivel;
       return {
         categoria,
-        nivel: Math.floor(respuestasSeleccionadas), // Nivel entero
+        nivel,
       };
     });
 
-    const totalCategorias = Object.keys(categorias).length;
-    const totalPreguntas = totalCategorias * totalPreguntasPorCategoria;
-    const promedioRespuestas = Math.floor(
-      (respuestasRespondidasTotales / totalPreguntas) * 100
-    );
+    // Calcular promedio en base a 54
+    const promedioNiveles = (sumaNivelesTotales / 9).toFixed(2);
 
     if (radarChart) {
       const radarCanvas = await html2canvas(radarChart);
@@ -95,7 +93,7 @@ export default function Simulador() {
     // Configurar fuente en negritas para el promedio
     doc.setFont("helvetica", "bold");
     doc.text(
-      `PROMEDIO NIVEL DE INNOVACIÓN (IRL) = ${promedioRespuestas}%`,
+      `PROMEDIO NIVEL DE INNOVACIÓN (IRL) = ${promedioNiveles}`,
       10,
       240 + nivelesPorCategoria.length * 8 + 2
     );
