@@ -17,6 +17,8 @@ export default function Simulador() {
   const [nivelSeleccionado, setNivelSeleccionado] = useState(null);
   const [checkboxes, setCheckboxes] = useState({});
   const [showModal, setShowModal] = useState(true);
+  const [pdfModal, setPdfModal] = useState(false);
+  const [nombreProyecto, setNombreProyecto] = useState("");
 
   const aumentarNivel = (nivel) => {
     setNiveles((prevState) => ({
@@ -80,8 +82,9 @@ export default function Simulador() {
       const radarImage = radarCanvas.toDataURL("image/png");
 
       // Agregar la imagen del gráfico Radar al PDF
-      doc.text("Gráfico Radar", 10, 10);
-      doc.addImage(radarImage, "PNG", 10, 20, 190, 190);
+      doc.text(`Nombre del Proyecto: ${nombreProyecto}`, 10, 10);
+      doc.text("Gráfico Radar", 10, 20);
+      doc.addImage(radarImage, "PNG", 10, 30, 190, 190);
     }
 
     // Agregar niveles por categoría al PDF
@@ -100,7 +103,7 @@ export default function Simulador() {
     doc.setFont("helvetica", "normal"); // Restaurar la fuente normal para el resto del documento
 
     // Guardar el PDF
-    doc.save("simulador.pdf");
+    doc.save(`${nombreProyecto || "simulador"}.pdf`);
   };
 
   return (
@@ -130,6 +133,40 @@ export default function Simulador() {
         </div>
       )}
 
+      {pdfModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h2 className="text-xl font-bold mb-4">
+              Ingrese Nombre del Proyecto
+            </h2>
+            <input
+              type="text"
+              value={nombreProyecto}
+              onChange={(e) => setNombreProyecto(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded mb-4"
+              placeholder="Nombre del Proyecto"
+            />
+            <div className="flex justify-end space-x-4">
+              <button
+                onClick={() => {
+                  generarPDF();
+                  setPdfModal(false);
+                }}
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+              >
+                Aceptar
+              </button>
+              <button
+                onClick={() => setPdfModal(false)}
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {!showModal && (
         <div className="text-white gap-8 mt-4 grid grid-cols-8">
           <div className="flex flex-col col-span-1 mr-3">
@@ -146,7 +183,7 @@ export default function Simulador() {
                 </button>
               ))}
               <button
-                onClick={generarPDF}
+                onClick={() => setPdfModal(true)}
                 className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700"
               >
                 Generar PDF
@@ -161,7 +198,7 @@ export default function Simulador() {
                   style={{ fontSize: "25px", textAlign: "center" }}
                   className="text-xl font-bold"
                 >
-                  Preguntas para {nivelSeleccionado}: <br></br>
+                  Preguntas para {nivelSeleccionado}: <br />
                   <span
                     style={{ fontSize: "25px" }}
                     className="text-lg font-normal"
@@ -170,8 +207,7 @@ export default function Simulador() {
                   </span>
                 </h3>
                 <ul style={{ fontSize: "25px" }}>
-                  {" "}
-                  <br></br>
+                  <br />
                   {categorias[nivelSeleccionado].map((pregunta) => (
                     <li key={pregunta.nivel} className="mb-2">
                       <div className="flex items-center">

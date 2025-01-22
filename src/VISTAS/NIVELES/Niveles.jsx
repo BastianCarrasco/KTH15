@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CRL, TRL, BRL, IPRL, TmRL, FRL } from "./TextosNiveles";
+import { CRL, TRL, BRL, IPRL, TmRL, FRL, definiciones } from "./TextosNiveles";
 
 const Niveles = () => {
   const [mostrarCRL, setMostrarCRL] = useState(false);
@@ -8,6 +8,7 @@ const Niveles = () => {
   const [mostrarIPRL, setMostrarIPRL] = useState(false);
   const [mostrarTmRL, setMostrarTmRL] = useState(false);
   const [mostrarFRL, setMostrarFRL] = useState(false);
+  const [Sigla, setSigla] = useState("");
 
   const aregloSeters = [
     setMostrarBRL,
@@ -29,26 +30,32 @@ const Niveles = () => {
   const toggleTRL = () => {
     setMostrarTRL(!mostrarTRL);
     setearSigla(4);
+    setSigla("TRL");
   };
   const toggleCRL = () => {
     setMostrarCRL(!mostrarCRL);
     setearSigla(1);
+    setSigla("CRL");
   };
   const toggleBRL = () => {
     setMostrarBRL(!mostrarBRL);
     setearSigla(0);
+    setSigla("BRL");
   };
   const toggleIPRL = () => {
     setMostrarIPRL(!mostrarIPRL);
     setearSigla(3);
+    setSigla("TRL");
   };
   const toggleTmRL = () => {
     setMostrarTmRL(!mostrarTmRL);
     setearSigla(5);
+    setSigla("TMRL");
   };
   const toggleFRL = () => {
     setMostrarFRL(!mostrarFRL);
     setearSigla(2);
+    setSigla("FRL");
   };
 
   return (
