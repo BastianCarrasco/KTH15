@@ -160,7 +160,7 @@ const Niveles = () => {
             ).map(([key, value]) => (
               <div key={key} className="mb-4">
                 <h2 className="text-xl font-bold">{key.toUpperCase()}</h2>
-                <p className="text-sm">{value}</p>
+                <p className="text-xl">{value}</p>
               </div>
             ))}
           </div>
