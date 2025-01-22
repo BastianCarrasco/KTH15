@@ -56,30 +56,26 @@ export default function Simulador() {
     const doc = new jsPDF();
     const radarChart = document.getElementById("radar-chart");
 
-    // Calcular totales y promedios
+    // Calcular totales y niveles
     const totalPreguntasPorCategoria = 9; // Cada categoría tiene 9 preguntas
     let respuestasRespondidasTotales = 0;
 
-    const porcentajesPorCategoria = Object.keys(categorias).map((categoria) => {
+    const nivelesPorCategoria = Object.keys(categorias).map((categoria) => {
       const respuestasSeleccionadas = Object.values(
         checkboxes[categoria] || {}
       ).filter((val) => val).length;
       respuestasRespondidasTotales += respuestasSeleccionadas;
       return {
         categoria,
-        porcentaje: (
-          (respuestasSeleccionadas / totalPreguntasPorCategoria) *
-          100
-        ).toFixed(2),
+        nivel: Math.floor(respuestasSeleccionadas), // Nivel entero
       };
     });
 
     const totalCategorias = Object.keys(categorias).length;
     const totalPreguntas = totalCategorias * totalPreguntasPorCategoria;
-    const promedioRespuestas = (
-      (respuestasRespondidasTotales / totalPreguntas) *
-      100
-    ).toFixed(2);
+    const promedioRespuestas = Math.floor(
+      (respuestasRespondidasTotales / totalPreguntas) * 100
+    );
 
     if (radarChart) {
       const radarCanvas = await html2canvas(radarChart);
@@ -90,18 +86,20 @@ export default function Simulador() {
       doc.addImage(radarImage, "PNG", 10, 20, 190, 190);
     }
 
-    // Agregar promedio general al PDF
-    doc.text(
-      `Promedio general de respuestas respondidas = ${promedioRespuestas}%`,
-      10,
-      230
-    );
-
-    // Agregar porcentaje por categoría al PDF
-    doc.text("Porcentaje de respuestas por categoría :", 10, 240);
-    porcentajesPorCategoria.forEach((item, index) => {
-      doc.text(`${item.categoria} = ${item.porcentaje}%`, 10, 250 + index * 8);
+    // Agregar niveles por categoría al PDF
+    doc.text("Niveles actuales por categoría:", 10, 230);
+    nivelesPorCategoria.forEach((item, index) => {
+      doc.text(`${item.categoria} = Nivel ${item.nivel}`, 10, 240 + index * 8);
     });
+
+    // Configurar fuente en negritas para el promedio
+    doc.setFont("helvetica", "bold");
+    doc.text(
+      `PROMEDIO NIVEL DE INNOVACIÓN (IRL) = ${promedioRespuestas}%`,
+      10,
+      240 + nivelesPorCategoria.length * 8 + 2
+    );
+    doc.setFont("helvetica", "normal"); // Restaurar la fuente normal para el resto del documento
 
     // Guardar el PDF
     doc.save("simulador.pdf");
