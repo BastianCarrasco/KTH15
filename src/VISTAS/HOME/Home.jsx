@@ -45,12 +45,12 @@ const Home = () => {
 
         {/* Contenedor para centrar el botón en la columna */}
         <div className="flex justify-center mt-6">
-          <Link
+          {/* <Link
             to="/formulario2" // Cambia esta dirección al path correcto para el formulario
             className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 px-8 text-xl rounded-lg shadow-md transition duration-300"
           >
             {texts.formButtonText}
-          </Link>
+          </Link> */}
         </div>
       </div>
 

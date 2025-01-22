@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RadarChart from "./createRadarChartData ";
 import categorias from "./ni.json";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 export default function Simulador() {
   const [niveles, setNiveles] = useState({
@@ -13,7 +15,7 @@ export default function Simulador() {
   });
 
   const [nivelSeleccionado, setNivelSeleccionado] = useState(null);
-  const [checkboxes, setCheckboxes] = useState({}); // Estructura más compleja para checkboxes
+  const [checkboxes, setCheckboxes] = useState({});
   const [showModal, setShowModal] = useState(true);
 
   const aumentarNivel = (nivel) => {
@@ -25,7 +27,6 @@ export default function Simulador() {
   };
 
   const handleCheckboxChange = (preguntaId, nombreCategoria, checked) => {
-    // Actualizamos el estado de los checkboxes de manera independiente para cada pregunta y nivel
     setCheckboxes((prevState) => {
       const newState = {
         ...prevState,
@@ -35,7 +36,6 @@ export default function Simulador() {
         },
       };
 
-      // Actualizar niveles de acuerdo con el estado del checkbox
       if (checked) {
         setNiveles((prevNiveles) => ({
           ...prevNiveles,
@@ -50,6 +50,61 @@ export default function Simulador() {
 
       return newState;
     });
+  };
+
+  const generarPDF = async () => {
+    const doc = new jsPDF();
+    const radarChart = document.getElementById("radar-chart");
+
+    // Calcular totales y promedios
+    const totalPreguntasPorCategoria = 9; // Cada categoría tiene 9 preguntas
+    let respuestasRespondidasTotales = 0;
+
+    const porcentajesPorCategoria = Object.keys(categorias).map((categoria) => {
+      const respuestasSeleccionadas = Object.values(
+        checkboxes[categoria] || {}
+      ).filter((val) => val).length;
+      respuestasRespondidasTotales += respuestasSeleccionadas;
+      return {
+        categoria,
+        porcentaje: (
+          (respuestasSeleccionadas / totalPreguntasPorCategoria) *
+          100
+        ).toFixed(2),
+      };
+    });
+
+    const totalCategorias = Object.keys(categorias).length;
+    const totalPreguntas = totalCategorias * totalPreguntasPorCategoria;
+    const promedioRespuestas = (
+      (respuestasRespondidasTotales / totalPreguntas) *
+      100
+    ).toFixed(2);
+
+    if (radarChart) {
+      const radarCanvas = await html2canvas(radarChart);
+      const radarImage = radarCanvas.toDataURL("image/png");
+
+      // Agregar la imagen del gráfico Radar al PDF
+      doc.text("Gráfico Radar", 10, 10);
+      doc.addImage(radarImage, "PNG", 10, 20, 190, 190);
+    }
+
+    // Agregar promedio general al PDF
+    doc.text(
+      `Promedio general de respuestas respondidas = ${promedioRespuestas}%`,
+      10,
+      230
+    );
+
+    // Agregar porcentaje por categoría al PDF
+    doc.text("Porcentaje de respuestas por categoría :", 10, 240);
+    porcentajesPorCategoria.forEach((item, index) => {
+      doc.text(`${item.categoria} = ${item.porcentaje}%`, 10, 250 + index * 8);
+    });
+
+    // Guardar el PDF
+    doc.save("simulador.pdf");
   };
 
   return (
@@ -81,7 +136,6 @@ export default function Simulador() {
 
       {!showModal && (
         <div className="text-white gap-8 mt-4 grid grid-cols-8">
-          {/* Columna de botones a la izquierda (3/8) */}
           <div className="flex flex-col col-span-1 mr-3">
             <h2 className="mb-4 text-xl font-bold">Simulador</h2>
             <div className="flex flex-col space-y-4">
@@ -95,10 +149,15 @@ export default function Simulador() {
                   {nivel}
                 </button>
               ))}
+              <button
+                onClick={generarPDF}
+                className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700"
+              >
+                Generar PDF
+              </button>
             </div>
           </div>
 
-          {/* Columna de preguntas (2/8) */}
           <div className="col-span-4 mr-8">
             {nivelSeleccionado && (
               <>
@@ -144,12 +203,12 @@ export default function Simulador() {
             )}
           </div>
 
-          {/* Columna de gráfico Radar (3/8) */}
           <div className="col-span-3 mr-8">
             <h3 className="text-xl font-bold">Gráfico Radar:</h3>
             <div id="radar-chart">
               <RadarChart niveles={niveles} />
             </div>
+            {/* Botón para generar PDF */}
           </div>
         </div>
       )}

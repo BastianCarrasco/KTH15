@@ -37,7 +37,7 @@ const getRadarChartData = (niveles) => {
     labels: labels,
     datasets: [
       {
-        label: "Nivel de Preparación para la Innovación",
+        label: "NIVEL DE INNOVACIÓN (IRL)",
         data: data,
         backgroundColor: "rgba(15, 83, 26, 0.2)",
         borderColor: "rgb(8, 168, 0)",
@@ -98,7 +98,7 @@ const getBarChartData = (niveles) => {
     labels: labels,
     datasets: [
       {
-        label: "Nivel de Preparación para la Innovación",
+        label: "NIVEL DE INNOVACIÓN (IRL)",
         data: data,
         backgroundColor: backgroundColors,
         borderColor: "rgba(0, 0, 0, 0.5)",
