@@ -75,7 +75,7 @@ export default function Simulador() {
     });
 
     // Calcular promedio en base a 54
-    const promedioNiveles = (sumaNivelesTotales / 9).toFixed(2);
+    const promedioNiveles = (sumaNivelesTotales / 6).toFixed(2);
 
     if (radarChart) {
       const radarCanvas = await html2canvas(radarChart);
