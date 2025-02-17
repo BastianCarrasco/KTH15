@@ -186,7 +186,7 @@ export default function Simulador() {
                       }
                       className="mr-2 transform scale-125"
                     />
-                    {pregunta.descripcion}
+                    {"Nivel " + pregunta.nivel +" - " }{pregunta.descripcion}  
                   </div>
                 </li>
               ))}
