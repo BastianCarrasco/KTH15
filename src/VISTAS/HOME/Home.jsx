@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import kth_logo from "../../assets/kth-logo.png";
-import pucv_logo from "../../assets/PUCV.png";
+import pucv_logo from "../../assets/PUCVLOGO.png";
 import texts from "./TextoHome.json";
 
 const Home = () => {

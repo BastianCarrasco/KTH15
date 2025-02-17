@@ -65,7 +65,7 @@ const Niveles = () => {
       <h1 className="text-2xl font-bold mb-4 text-center">
         Niveles de Preparación
       </h1>
-      <div className="flex space-x-4">
+      <div className="flex flex-wrap justify-center gap-4">
         <button
           onClick={toggleCRL}
           className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"

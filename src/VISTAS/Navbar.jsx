@@ -31,7 +31,11 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                d={
+                  isOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
@@ -47,6 +51,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
+        {/* Menú móvil */}
         <div
           className={`${isOpen ? "block" : "hidden"} md:hidden mt-2 space-y-2`}
         >
@@ -56,6 +61,20 @@ const Navbar = () => {
             onClick={toggleMenu}
           >
             Home
+          </Link>
+          <Link
+            to="/niveles"
+            className="block text-white hover:text-gray-300"
+            onClick={toggleMenu}
+          >
+            Niveles
+          </Link>
+          <Link
+            to="/sim"
+            className="block text-white hover:text-gray-300"
+            onClick={toggleMenu}
+          >
+            Simulador
           </Link>
         </div>
       </nav>

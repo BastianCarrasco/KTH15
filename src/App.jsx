@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./VISTAS/Navbar";
 import Home from "./VISTAS/HOME/Home";
 import Niveles from "./VISTAS/NIVELES/Niveles";
