@@ -26,6 +26,16 @@ const styles = StyleSheet.create({
   },
 });
 
+// 📌 Diccionario de significados de siglas
+const significados = {
+  TRL: "Nivel de madurez tecnológica",
+  CRL: "Nivel de  madurez del cliente",
+  BRL: "Nivel de  madurez del negocio",
+  IPRL: "Nivel de  madurez de la propiedad intelectual",
+  FRL: "Nivel de  madurez para financiamiento",
+  TEAM: "Nivel de  madurez del equipo",
+};
+
 // 📌 Componente para el PDF
 const PDFDocument = ({ nombreProyecto, categorias, checkboxes, UA, Encargado, radarImage }) => {
   // Calcular niveles por categoría y promedio
@@ -63,11 +73,11 @@ const PDFDocument = ({ nombreProyecto, categorias, checkboxes, UA, Encargado, ra
         <Text style={styles.title}>Niveles actuales por categoría:</Text>
         {nivelesPorCategoria.map((item, index) => (
           <Text key={index} style={styles.text}>
-            {item.categoria} = Nivel {item.nivel}
+            {item.categoria} = {item.nivel} {significados[item.categoria] ? `(${significados[item.categoria]})` : ""}
           </Text>
         ))}
         <Text style={[styles.text, { fontWeight: "bold", marginTop: 10 }]}>
-          PROMEDIO NIVEL DE INNOVACIÓN (IRL) = {promedioNiveles}
+           (IRL) = {promedioNiveles}
         </Text>
       </Page>
     </Document>
