@@ -58,7 +58,7 @@ const Niveles = () => {
         </div>
       ) : (
         // Sección del termómetro
-        <div className="mt-6 flex flex-col sm:flex-row items-start w-full max-w-[600px]">
+        <div className="mt-6 flex flex-col sm:flex-row items-start w-full max-w-[1000px]">
           {/* Termómetro */}
           <div className="relative flex flex-col items-center">
             <div className="w-12 sm:w-16 rounded-full bg-gray-200 overflow-hidden">
