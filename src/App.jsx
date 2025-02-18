@@ -5,6 +5,7 @@ import Home from "./VISTAS/HOME/Home";
 import Niveles from "./VISTAS/NIVELES/Niveles";
 import Simulador from "./VISTAS/SIMULADOR/Simulador";
 import Administracion from "./VISTAS/ADMIN/Admin";
+import Evaluacion from "./VISTAS/EVAL/Eval";
 //import Inicio from "./VISTAS/INICIO/Inicio";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
               <Route path="/niveles" element={<Niveles />} />
               <Route path="/sim" element={<Simulador />} />
               <Route path="/admin" element={<Administracion />} />
+              <Route path="/eval" element={<Evaluacion />} />
             </Routes>
           </div>
           <footer className="bg-slateCustom p-4 text-white w-full flex justify-center items-center mt-auto">

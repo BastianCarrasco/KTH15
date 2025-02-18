@@ -110,3 +110,4 @@ const Niveles = () => {
 };
 
 export default Niveles;
+
