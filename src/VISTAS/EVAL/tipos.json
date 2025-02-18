@@ -1,0 +1,59 @@
+{
+    "ANID": [
+      {
+        "nombre": "Concurso IDeA I+D 2026",
+        "inicio": "julio 2025",
+        "cierre": "septiembre 2025",
+        "financiamiento": 227000000,
+        "plazo": "24 meses",
+        "TRL_minimo": 2,
+        "objetivo": "Apoya el cofinanciamiento de proyectos de I+D aplicada con un fuerte componente científico, para que desarrollen tecnologías que puedan convertirse en nuevos productos, procesos o servicios con impacto productivo, económico y social."
+      },
+      {
+        "nombre": "Concurso de Investigación Tecnológica IDeA 2026",
+        "inicio": "septiembre 2025",
+        "cierre": "noviembre 2025",
+        "financiamiento": 237000000,
+        "plazo": "24 meses",
+        "TRL_minimo": 4,
+        "objetivo": "Apoyar el financiamiento de proyectos de investigación y desarrollo con antecedentes que sustenten una hipótesis de aplicación de una tecnología, producto o servicio y lograr su validación a través de prototipos avanzados."
+      },
+      {
+        "nombre": "Startup Ciencia 2026",
+        "inicio": "julio 2025",
+        "cierre": "septiembre 2025",
+        "financiamiento": 134000000,
+        "plazo": "12 meses",
+        "TRL_minimo": 3,
+        "requisito": "Empresa constituida en Chile con menos de 10 años.",
+        "objetivo": "Promover el crecimiento y fortalecimiento de empresas de base científico-tecnológica en Chile a través del cofinanciamiento y apoyo técnico en el desarrollo tecnológico e innovación."
+      }
+    ],
+    "CORFO": [
+      {
+        "nombre": "Convocatoria Crea y Valida",
+        "inicio": "marzo 2025",
+        "cierre": "mayo 2025",
+        "financiamiento": "180 - 220 millones",
+        "plazo": "24 meses",
+        "objetivo": "Apoyar el desarrollo de nuevos o mejorados productos y/o procesos, que requieran I+D, desde la fase de prototipo hasta la validación técnica y comercial."
+      },
+      {
+        "nombre": "Convocatoria Innova Región",
+        "inicio": "abril 2025",
+        "cierre": "mayo 2025",
+        "financiamiento": 60000000,
+        "plazo": "24 meses",
+        "objetivo": "Apoyar el desarrollo de nuevos o mejorados productos y/o procesos, desde la fase de prototipo hasta la validación técnica y comercial, fortaleciendo la innovación empresarial a nivel regional."
+      }
+    ],
+    "PUCV": {
+      "nombre": "DI Regular",
+      "inicio_estimado": "marzo 2025",
+      "termino_estimado": "abril 2025",
+      "financiamiento": 3300000,
+      "plazo": "10 meses",
+      "objetivo": "Incentivar a académicos/as con trayectoria investigadora en la PUCV que hayan finalizado proyectos FONDECYT, FONDEF, o similares, y desean preparar una nueva postulación."
+    }
+  }
+  
