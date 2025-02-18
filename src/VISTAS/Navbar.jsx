@@ -49,9 +49,9 @@ const Navbar = () => {
             <Link to="/sim" className="text-white hover:text-gray-300">
               Simulador
             </Link>
-            {/* <Link to="/eval" className="text-white hover:text-gray-300">
+            <Link to="/eval" className="text-white hover:text-gray-300">
               Evaluacion
-            </Link> */}
+            </Link>
           </div>
         </div>
         {/* Menú móvil */}
@@ -79,13 +79,13 @@ const Navbar = () => {
           >
             Simulador
           </Link>
-          {/* <Link
+          <Link
             to="/eval"
             className="block text-white hover:text-gray-300"
             onClick={toggleMenu}
           >
             Evaluacion
-          </Link> */}
+          </Link>
         </div>
       </nav>
     </>
