@@ -28,21 +28,21 @@ const Niveles = () => {
   };
 
   return (
-    <div className="p-6 flex flex-col items-center text-white">
+    <div className="p-6 flex flex-col items-center text-white w-full">
       <h1 className="text-2xl font-bold mb-4 text-center">Niveles de Madurez</h1>
 
-      {/* RadarChart */}
+      {/* RadarChart responsive */}
       {mostrarRadar ? (
         <div className="w-full flex flex-col items-center">
-          <ResponsiveContainer width={500} height={500}>
-            <RadarChart cx="50%" cy="50%" outerRadius="90%" data={dataRadar}>
+          <ResponsiveContainer width="100%" height={400} className="max-w-[500px]">
+            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={dataRadar}>
               <PolarGrid />
               <PolarAngleAxis
                 dataKey="subject"
                 tick={({ payload, x, y }) => (
                   <foreignObject x={x - 25} y={y - 20} width={80} height={40}>
                     <button
-                      className="bg-green-600 text-white font-bold px-3 py-2 rounded-md cursor-pointer hover:bg-green-700"
+                      className="bg-green-600 text-white font-bold px-2 py-1 rounded-md text-sm sm:text-base hover:bg-green-700"
                       onClick={() => handleClickNivel(payload.value)}
                     >
                       {payload.value}
@@ -58,10 +58,10 @@ const Niveles = () => {
         </div>
       ) : (
         // Sección del termómetro
-        <div className="mt-6 flex items-start">
+        <div className="mt-6 flex flex-col sm:flex-row items-start w-full max-w-[600px]">
           {/* Termómetro */}
           <div className="relative flex flex-col items-center">
-            <div className="w-16 rounded-full bg-gray-200 overflow-hidden">
+            <div className="w-12 sm:w-16 rounded-full bg-gray-200 overflow-hidden">
               {Object.entries(datosNiveles[nivelSeleccionado][0]).map(([key, value], index, array) => {
                 const gradientColor = `hsl(${(120 / (array.length - 1)) * (array.length - index - 1)}, 100%, 50%)`;
                 return (
@@ -70,26 +70,26 @@ const Niveles = () => {
                     className="flex items-center justify-center"
                     style={{
                       backgroundColor: gradientColor,
-                      height: "60px",
+                      height: "50px",
                       borderBottom: index === array.length - 1 ? "none" : "1px solid white",
                     }}
                   >
-                    <span className="text-lg text-white font-bold">
+                    <span className="text-sm sm:text-lg text-white font-bold">
                       {nivelSeleccionado}{index + 1}
                     </span>
                   </div>
                 );
               })}
             </div>
-            <div className="w-16 h-16 bg-red-600 rounded-full mt-2"></div>
+            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-red-600 rounded-full mt-2"></div>
           </div>
 
           {/* Descripciones */}
-          <div className="ml-8">
+          <div className="ml-4 sm:ml-8 w-full">
             {Object.entries(datosNiveles[nivelSeleccionado][0]).map(([key, value], index) => (
               <div key={key} className="mb-4">
-                <h2 className="text-xl font-bold">{nivelSeleccionado}{index + 1}</h2>
-                <p className="text-xl">{value}</p>
+                <h2 className="text-lg sm:text-xl font-bold">{nivelSeleccionado}{index + 1}</h2>
+                <p className="text-sm sm:text-lg">{value}</p>
               </div>
             ))}
           </div>
@@ -100,7 +100,7 @@ const Niveles = () => {
       {!mostrarRadar && (
         <button
           onClick={() => setMostrarRadar(true)}
-          className="mt-6 px-6 py-2 bg-gray-600 text-white font-semibold rounded-md hover:bg-gray-700"
+          className="mt-6 px-4 py-2 bg-gray-600 text-white font-semibold rounded-md hover:bg-gray-700"
         >
           Volver al Radar
         </button>
