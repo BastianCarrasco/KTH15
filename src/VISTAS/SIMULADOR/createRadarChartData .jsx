@@ -93,41 +93,6 @@ const radarChartOptions = {
   },
 };
 
-const pointLabelBackgroundPlugin = {
-  id: "pointLabelBackground",
-  beforeDraw(chart) {
-    const { ctx, scales } = chart;
-    const { r } = scales;
-    if (!r) return;
-
-    ctx.font = "bold 15px Arial"; // Ajusta la fuente
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-
-    r.pointLabels._labelItems.forEach((label) => {
-      const { x, y, label: text } = label;
-
-      // Fondo del label
-      ctx.fillStyle = "rgba(0, 0, 0, 0.7)"; // Color de fondo
-      const padding = 6;
-      const textWidth = ctx.measureText(text).width;
-      const textHeight = 18; // Ajusta según la fuente
-      
-      ctx.fillRect(x - textWidth / 2 - padding, y - textHeight / 2 - padding, textWidth + padding * 2, textHeight + padding * 2);
-
-      // Borde del label
-      ctx.strokeStyle = "white"; // Color del borde
-      ctx.lineWidth = 2;
-      ctx.strokeRect(x - textWidth / 2 - padding, y - textHeight / 2 - padding, textWidth + padding * 2, textHeight + padding * 2);
-
-      // Texto del label
-      ctx.fillStyle = "white"; // Color del texto
-      ctx.fillText(text, x, y);
-    });
-  },
-};
-
-
 
 // Generate Bar chart data
 const getBarChartData = (niveles) => {

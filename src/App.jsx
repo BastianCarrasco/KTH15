@@ -6,6 +6,7 @@ import Niveles from "./VISTAS/NIVELES/Niveles";
 import Simulador from "./VISTAS/SIMULADOR/Simulador";
 import Administracion from "./VISTAS/ADMIN/Admin";
 import Evaluacion from "./VISTAS/EVAL/Eval";
+import CRL_Flujo from "./VISTAS/Mapas/flujofiltrados";
 //import Inicio from "./VISTAS/INICIO/Inicio";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
               <Route path="/sim" element={<Simulador />} />
               <Route path="/admin" element={<Administracion />} />
               <Route path="/eval" element={<Evaluacion />} />
+              <Route path="/crl" element={<CRL_Flujo />} />
             </Routes>
           </div>
           <footer className="bg-slateCustom p-4 text-white w-full flex justify-center items-center mt-auto">
@@ -45,11 +47,7 @@ const App = () => {
         </div>
       </>
 
-      {/* {loggedInUser ? (
-
-      ) : (
-        <Inicio onLogin={handleLogin} />
-      )} */}
+  
     </Router>
   );
 };
